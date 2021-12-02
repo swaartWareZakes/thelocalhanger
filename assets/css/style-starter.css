@@ -650,6 +650,12 @@ pre code {
     max-width: 540px;
   }
 }
+@media (max-width:768px){
+  .navbar .navbar-brand {
+    font-size: 21px !important;
+  }
+
+}
 
 @media (min-width: 768px) {
   .container {
