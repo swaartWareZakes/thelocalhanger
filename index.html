@@ -516,16 +516,12 @@
           <div class="d-grid cont-main-top mt-5">
             <!-- contact form -->
             <div class="contacts12-main mt-lg-2">
-              <form
-                action="https://sendmail.w3layouts.com/submitForm"
-                method="post"
-                class="main-input"
-              >
+              <form action="POST" data-netlify="true" class="main-input">
                 <div class="top-inputs d-grid">
                   <input
                     type="text"
                     placeholder="Name"
-                    name="w3lName"
+                    name="name"
                     id="w3lName"
                     required=""
                   />
@@ -540,16 +536,19 @@
                 <input
                   type="text"
                   placeholder="Phone Number"
-                  name="w3lName"
+                  name="phone"
                   id="w3lName"
                   required=""
                 />
                 <textarea
                   placeholder="Message"
-                  name="w3lMessage"
+                  name="message"
                   id="w3lMessage"
                   required=""
                 ></textarea>
+                <div class="field">
+                  <div data-netlify-recaptcha="true"></div>
+                </div>
                 <button type="submit" class="btn btn-primary btn-style mt-4">
                   Submit Now
                 </button>
