@@ -16,9 +16,90 @@
     <!-- //google-fonts -->
     <!-- Template CSS -->
     <link rel="stylesheet" href="assets/css/style-starter.css" />
+    <style>
+      body {
+        animation: fadeInAnimation ease 3s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+      }
+
+      .loader {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #262626;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .loader .circle {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+
+        position: absolute;
+
+        animation: spin 1s ease-in-out infinite;
+      }
+
+      .loader .circle:nth-child(1) {
+        border-top: 2px solid red;
+        /*   animation-duration: 1s; */
+      }
+
+      .loader .circle:nth-child(2) {
+        border-bottom: 2px solid orangered;
+        width: 120px;
+        height: 120px;
+        /*   animation-duration: 2s; */
+      }
+
+      .loader .circle:nth-child(3) {
+        border-left: 2px solid violet;
+        width: 180px;
+        height: 180px;
+        /*   animation-duration: 1s; */
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(720deg);
+        }
+      }
+      @keyframes fadeInAnimation {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      /* .center {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      } */
+    </style>
   </head>
 
   <body>
+    <!-- Loader -->
+    <div id="loader" class="center loader">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+    <!-- end of loader -->
     <!--header-->
     <header id="site-header" class="fixed-top">
       <div class="container">
@@ -245,8 +326,8 @@
             <div class="s-block">
               <a href="classes.html" class="d-block">
                 <img
-                  src="assets/images/mish/wallets.png"
-                  alt=""
+                  src="https://i.ibb.co/ggkqgvM/paint.png"
+                  alt="paint"
                   class="img-fluid"
                 />
                 <!-- <div class="p-3">
@@ -261,8 +342,8 @@
             <div class="s-block">
               <a href="classes.html" class="d-block">
                 <img
-                  src="assets/images/mish/paint.png"
-                  alt=""
+                  src="https://i.ibb.co/x6W8W80/fridge.png"
+                  alt="fridge"
                   class="img-fluid img-responsive"
                 />
                 <!-- <div class="p-3">
@@ -277,8 +358,8 @@
             <div class="s-block">
               <a href="classes.html" class="d-block">
                 <img
-                  src="assets/images/mish/guy.png"
-                  alt=""
+                  src="https://i.ibb.co/h9cPC76/guy.png"
+                  alt="guy"
                   class="img-fluid"
                 />
                 <!-- <div class="p-3">
@@ -330,7 +411,7 @@
             delivered to you within 1/2days of ordering. (Only in Gauteng)
           </p>
           <a
-            href="https://thelocalhanger.herokuapp.com/product/61a8cd34bbb3ad0004193934"
+            href="https://thelocalhanger.herokuapp.com/product/61af560face38036303930e8"
             target="_blank"
             class="btn btn-style btn-white mt-sm-5 mt-4 mr-2"
             >Order Now</a
@@ -352,8 +433,8 @@
         <div class="row">
           <div class="col-lg-6 left-wthree-img">
             <img
-              src="assets/images/mish/girl-transparent.png"
-              alt=""
+              src="https://i.ibb.co/qx9V5wg/girl-transparent.png"
+              alt="girl-transparent"
               class="img-fluid"
             />
           </div>
@@ -842,5 +923,16 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <!-- //bootstrap-->
     <!-- //Js scripts -->
+    <script>
+      document.onreadystatechange = function () {
+        if (document.readyState !== 'complete') {
+          document.querySelector('body').style.visibility = 'hidden';
+          document.querySelector('.loader').style.visibility = 'visible';
+        } else {
+          document.querySelector('.loader').style.visibility = 'hidden';
+          document.querySelector('body').style.visibility = 'visible';
+        }
+      };
+    </script>
   </body>
 </html>
